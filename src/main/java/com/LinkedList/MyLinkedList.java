@@ -66,4 +66,14 @@ public class MyLinkedList {
         tempnode = tempnode.getNext();
         return tempnode;
     }
+
+    public INode search(MyNode<Integer> key) {
+        INode tempnode = head;
+        while (tempnode != null){
+            if(tempnode.equals(key))
+                return tempnode;
+            tempnode = tempnode.getNext();
+        }
+        return null;
+    }
 }
