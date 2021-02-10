@@ -36,4 +36,20 @@ public class MyLinkedListTest {
         Assert.assertTrue(result);
 
     }
+
+    @Test
+    public void given3NumberInsertbetweentwo_ShouldpassResult() {
+        MyNode<Integer> mysndNode = new MyNode<>(30);
+        MyNode<Integer> mythrdNode = new MyNode<>(70);
+        MyNode<Integer> myfstNode = new MyNode<>(56);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myfstNode);
+        myLinkedList.append(mythrdNode);
+        myLinkedList.insert(myfstNode, mysndNode);
+
+        boolean result = myLinkedList.head.equals(myfstNode) && myLinkedList.head.getNext().equals(mysndNode) &&
+                        myLinkedList.tail.equals(mythrdNode);
+        Assert.assertTrue(result);
+    }
 }
