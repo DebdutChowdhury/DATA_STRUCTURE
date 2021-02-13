@@ -1,6 +1,6 @@
 package com.LinkedList;
 
-public class MyLinkedList {
+public class MyLinkedList<K> {
     public INode head;
     public INode tail;
 
@@ -67,7 +67,7 @@ public class MyLinkedList {
         return tempnode;
     }
 
-    public INode search(MyNode<Integer> key) {
+    public INode search(K key) {
         INode tempnode = head;
         while (tempnode != null){
             if(tempnode.equals(key))
@@ -75,5 +75,11 @@ public class MyLinkedList {
             tempnode = tempnode.getNext();
         }
         return null;
+    }
+
+    public void newInsert(INode myNode, INode newNode) {
+        INode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
     }
 }

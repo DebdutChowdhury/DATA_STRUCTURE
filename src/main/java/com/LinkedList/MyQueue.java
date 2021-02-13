@@ -7,7 +7,7 @@ public class MyQueue {
         this.myLinkedList = new MyLinkedList();
     }
 
-    public void enqueue(MyNode myNode) {
+    public void enqueue(INode myNode) {
         myLinkedList.append(myNode);
     }
 
