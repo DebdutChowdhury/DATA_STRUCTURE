@@ -82,4 +82,22 @@ public class MyLinkedList<K> {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
     }
+
+    public void deleteElement(MyNode<Integer> myNode) {
+        INode tempnode = this.head;
+        while (!tempnode.getNext().equals(myNode))
+            tempnode = tempnode.getNext();
+        tempnode.setNext(tempnode.getNext().getNext());
+        System.out.println("LinkedList size: "+size());
+    }
+
+    public int size(){
+        INode tempnode = this.head;
+        int size = 0;
+        while (tempnode != null){
+            size++;
+            tempnode = tempnode.getNext();
+        }
+        return size;
+    }
 }
