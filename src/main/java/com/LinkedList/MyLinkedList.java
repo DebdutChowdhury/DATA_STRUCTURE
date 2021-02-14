@@ -34,7 +34,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    public void append(INode newNode) {
+    public void append(INode<K> newNode) {
         if (this.head == null)
             this.head = newNode;
         if (this.tail == null)
@@ -99,5 +99,10 @@ public class MyLinkedList<K> {
             tempnode = tempnode.getNext();
         }
         return size;
+    }
+
+    @Override
+    public String toString(){
+        return "MyLinkedListNodes {"+head+"}";
     }
 }
